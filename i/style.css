@@ -7915,7 +7915,36 @@ p,
 }
 
 .brand-mark {
+  width: clamp(30px, 2.2vw, 36px);
+  height: clamp(30px, 2.2vw, 36px);
+  display: inline-grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
   font-size: 0;
+}
+
+.brand-mark svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+  transition: transform 220ms var(--ease);
+}
+
+.brand-mark-top {
+  fill: var(--logo-top);
+}
+
+.brand-mark-bottom {
+  fill: var(--logo-bottom);
+}
+
+.brand:hover .brand-mark svg {
+  transform: translateY(-1px) scale(1.04);
 }
 
 .nav-links,
@@ -8433,6 +8462,8 @@ body::before {
   --muted: #526a7d;
   --accent: #0c76c8;
   --accent-strong: #075d9e;
+  --logo-top: #f06449;
+  --logo-bottom: #0c76c8;
   --pink: #41b8ff;
   --yellow: #d8f1ff;
   --blue: #0c76c8;
@@ -8694,6 +8725,70 @@ body::before {
 
 .deskimia-copy {
   align-self: center;
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: clamp(8px, 0.8vw, 12px);
+  align-items: start;
+}
+
+.deskimia-copy .eyebrow {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.deskimia-copy h2 {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.16em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.deskimia-title-logo {
+  width: 0.9em;
+  height: 0.9em;
+  display: inline-grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.deskimia-title-logo-image {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.deskimia-title-logo-image.is-dark {
+  display: none;
+}
+
+html[data-theme="dark"] .deskimia-title-logo-image.is-light {
+  display: none;
+}
+
+html[data-theme="dark"] .deskimia-title-logo-image.is-dark {
+  display: block;
+}
+
+.deskimia-copy p:not(.eyebrow) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.deskimia-tags {
+  grid-column: 1;
+  grid-row: 4;
 }
 
 .deskimia-preview {
@@ -9483,6 +9578,8 @@ html[data-theme="dark"] {
   --image-outline: rgba(255, 255, 255, 0.12);
   --accent: #58b7ff;
   --accent-strong: #8bd0ff;
+  --logo-top: #ff8a66;
+  --logo-bottom: #58b7ff;
   --accent-soft: rgba(88, 183, 255, 0.12);
   --accent-border: rgba(88, 183, 255, 0.38);
   --history: #f2f7fb;
@@ -9555,6 +9652,12 @@ html[data-theme="dark"] .since-2010 {
 html[data-theme="dark"] .button-secondary,
 html[data-theme="dark"] .deskimia-tags span {
   color: var(--text);
+}
+
+.hero .button-secondary,
+html[data-theme="dark"] .hero .button-secondary {
+  background: transparent;
+  box-shadow: none;
 }
 
 html[data-theme="dark"] .button-primary,
@@ -9701,10 +9804,13 @@ html[data-theme="dark"] .store-link {
     min-width: 0;
   }
 
-  .deskimia-copy > div,
+  .deskimia-icon,
+  .deskimia-copy .eyebrow,
   .deskimia-copy h2,
   .deskimia-copy p:not(.eyebrow),
   .deskimia-tags {
+    grid-column: 1;
+    grid-row: auto;
     width: 100%;
     min-width: 0;
     max-width: 100%;
@@ -9719,6 +9825,7 @@ html[data-theme="dark"] .store-link {
   .deskimia-icon {
     width: 64px;
     height: 64px;
+    margin-top: 0;
   }
 
   .deskimia-tags {

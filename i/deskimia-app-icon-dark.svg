@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Deskimia app icon dark</title>
+  <desc id="desc">A dark macOS style icon with a custom monitor outline and flowing live desktop wallpaper.</desc>
+  <defs>
+    <linearGradient id="base" x1="120" y1="96" x2="904" y2="928" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#26313C"/>
+      <stop offset=".58" stop-color="#121923"/>
+      <stop offset="1" stop-color="#070B11"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="28%" cy="16%" r="74%">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".16"/>
+      <stop offset=".52" stop-color="#FFFFFF" stop-opacity=".06"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="screen" x1="210" y1="284" x2="814" y2="670" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#13D2C1"/>
+      <stop offset=".48" stop-color="#137ACF"/>
+      <stop offset="1" stop-color="#202478"/>
+    </linearGradient>
+    <linearGradient id="flowA" x1="172" y1="360" x2="856" y2="622" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#C7FF69"/>
+      <stop offset=".5" stop-color="#65F7DF"/>
+      <stop offset="1" stop-color="#A5B6FF"/>
+    </linearGradient>
+    <linearGradient id="flowB" x1="178" y1="624" x2="846" y2="496" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F1FFD8"/>
+      <stop offset=".46" stop-color="#B8F76B"/>
+      <stop offset="1" stop-color="#52E9D0"/>
+    </linearGradient>
+    <linearGradient id="monitorFace" x1="198" y1="236" x2="804" y2="908" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#24323C"/>
+      <stop offset=".55" stop-color="#17232D"/>
+      <stop offset="1" stop-color="#0C141C"/>
+    </linearGradient>
+    <linearGradient id="monitorEdge" x1="142" y1="220" x2="872" y2="780" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#BDEAF3"/>
+      <stop offset=".43" stop-color="#6E9FB7"/>
+      <stop offset="1" stop-color="#355A73"/>
+    </linearGradient>
+    <clipPath id="screenClip">
+      <rect x="210" y="284" width="604" height="386" rx="82"/>
+    </clipPath>
+  </defs>
+
+  <rect x="64" y="64" width="896" height="896" rx="216" fill="url(#base)"/>
+  <rect x="64" y="64" width="896" height="896" rx="216" fill="url(#glow)"/>
+
+  <path d="M276 210H748C826 210 890 274 890 352V608C890 686 826 750 748 750H584C574 750 566 758 566 768V794C566 806 576 816 588 816H664C696 816 722 842 722 874C722 906 696 932 664 932H360C328 932 302 906 302 874C302 842 328 816 360 816H436C448 816 458 806 458 794V768C458 758 450 750 440 750H276C198 750 134 686 134 608V352C134 274 198 210 276 210Z" fill="#03070C" opacity=".34"/>
+  <path d="M284 226H740C808 226 864 282 864 350V602C864 670 808 726 740 726H572C562 726 554 734 554 744V800C554 814 566 826 580 826H658C685 826 706 848 706 874C706 900 685 922 658 922H366C339 922 318 900 318 874C318 848 339 826 366 826H444C458 826 470 814 470 800V744C470 734 462 726 452 726H284C216 726 160 670 160 602V350C160 282 216 226 284 226Z" fill="none" stroke="#000000" stroke-width="52" stroke-linejoin="round" opacity=".24"/>
+  <path d="M284 226H740C808 226 864 282 864 350V602C864 670 808 726 740 726H572C562 726 554 734 554 744V800C554 814 566 826 580 826H658C685 826 706 848 706 874C706 900 685 922 658 922H366C339 922 318 900 318 874C318 848 339 826 366 826H444C458 826 470 814 470 800V744C470 734 462 726 452 726H284C216 726 160 670 160 602V350C160 282 216 226 284 226Z" fill="url(#monitorFace)" opacity=".98"/>
+  <path d="M284 226H740C808 226 864 282 864 350V602C864 670 808 726 740 726H572C562 726 554 734 554 744V800C554 814 566 826 580 826H658C685 826 706 848 706 874C706 900 685 922 658 922H366C339 922 318 900 318 874C318 848 339 826 366 826H444C458 826 470 814 470 800V744C470 734 462 726 452 726H284C216 726 160 670 160 602V350C160 282 216 226 284 226Z" fill="none" stroke="url(#monitorEdge)" stroke-width="38" stroke-linejoin="round"/>
+
+  <rect x="210" y="284" width="604" height="386" rx="82" fill="url(#screen)" stroke="#E9FBFF" stroke-width="10" stroke-opacity=".72"/>
+  <g clip-path="url(#screenClip)">
+    <path d="M150 438C292 348 424 372 548 322C664 276 768 318 874 300V450C748 508 634 512 526 472C396 424 272 450 150 538Z" fill="url(#flowA)" opacity=".9"/>
+    <path d="M160 612C300 540 424 546 552 602C658 648 748 624 864 552V704H160Z" fill="url(#flowB)" opacity=".93"/>
+    <path d="M208 644C330 600 456 616 572 674C660 718 760 714 816 674V704H208Z" fill="#FFFFFF" opacity=".18"/>
+  </g>
+</svg>
