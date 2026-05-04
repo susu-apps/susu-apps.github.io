@@ -8,15 +8,32 @@
       name="description"
       content="Independent apps for Apple platforms: history, language learning, offline maps, live wallpaper, reference, and everyday utilities."
     >
+    <script>
+      (() => {
+        try {
+          const storedTheme = window.localStorage.getItem("theme");
+          const preference = ["system", "dark", "light"].includes(storedTheme) ? storedTheme : "system";
+          const theme = preference === "system"
+            ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+            : preference;
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.dataset.themePreference = preference;
+          document.documentElement.style.colorScheme = theme;
+        } catch {
+          document.documentElement.dataset.theme = "light";
+          document.documentElement.dataset.themePreference = "system";
+        }
+      })();
+    </script>
     <link rel="preload" href="i/fonts/HankenGrotesk-wght.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="i/style.4531b69d.css">
+    <link rel="stylesheet" href="i/style.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='10' r='7.5' fill='%230c76c8'/%3E%3Ccircle cx='52' cy='25' r='7.5' fill='%230c76c8'/%3E%3Ccircle cx='44' cy='51' r='7.5' fill='%230c76c8'/%3E%3Ccircle cx='20' cy='51' r='7.5' fill='%230c76c8'/%3E%3Ccircle cx='12' cy='25' r='7.5' fill='%230c76c8'/%3E%3C/svg%3E">
     <link rel="shortcut icon" href="i/favicon.f2d8127d.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="i/favicon-16x16.a582c07f.png">
     <link rel="icon" type="image/png" sizes="32x32" href="i/favicon-32x32.8a74882e.png">
     <link rel="icon" type="image/png" sizes="48x48" href="i/favicon-48x48.4a4b306c.png">
     <link rel="apple-touch-icon" sizes="180x180" href="i/apple-touch-icon-180x180.c777a6f4.png">
-    <meta name="theme-color" content="#f5f5f7">
+    <meta name="theme-color" content="#f5f5f7" data-theme-color>
     <meta name="application-name" content="Susuapps">
     <meta name="apple-mobile-web-app-title" content="Susuapps">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +53,33 @@
           <a href="#deskimia">Coming soon</a>
           <a href="privacy/en.html">Privacy</a>
           <a href="mailto:susuapps@gmail.com">Support</a>
+        </div>
+        <div class="theme-switcher" role="group" aria-label="Theme preference">
+          <button class="theme-choice" type="button" aria-label="Follow system theme" aria-pressed="true" title="System" data-theme-choice="system">
+            <svg class="theme-choice-icon" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M4.75 6.75A2.75 2.75 0 0 1 7.5 4h9a2.75 2.75 0 0 1 2.75 2.75v6.5A2.75 2.75 0 0 1 16.5 16h-9a2.75 2.75 0 0 1-2.75-2.75v-6.5Z"/>
+              <path d="M9.25 20h5.5"/>
+              <path d="M12 16v4"/>
+            </svg>
+          </button>
+          <button class="theme-choice" type="button" aria-label="Use dark theme" aria-pressed="false" title="Dark" data-theme-choice="dark">
+            <svg class="theme-choice-icon" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M18.5 14.36A7.15 7.15 0 0 1 9.64 5.5a7.65 7.65 0 1 0 8.86 8.86Z"/>
+            </svg>
+          </button>
+          <button class="theme-choice" type="button" aria-label="Use light theme" aria-pressed="false" title="Light" data-theme-choice="light">
+            <svg class="theme-choice-icon" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M12 8.25a3.75 3.75 0 1 1 0 7.5 3.75 3.75 0 0 1 0-7.5Z"/>
+              <path d="M12 2.75v2.1"/>
+              <path d="M12 19.15v2.1"/>
+              <path d="m4.06 4.06 1.49 1.49"/>
+              <path d="m18.45 18.45 1.49 1.49"/>
+              <path d="M2.75 12h2.1"/>
+              <path d="M19.15 12h2.1"/>
+              <path d="m4.06 19.94 1.49-1.49"/>
+              <path d="m18.45 5.55 1.49-1.49"/>
+            </svg>
+          </button>
         </div>
         <details class="mobile-nav">
           <summary aria-label="Open navigation">
@@ -87,7 +131,15 @@
           </div>
         </div>
         <div class="deskimia-preview" aria-hidden="true">
-          <img class="studio-display-mockup" src="i/studio-display-mockup-transparent.png" alt="" loading="lazy">
+          <svg class="studio-display-shell" viewBox="120 175 560 455" preserveAspectRatio="xMidYMid meet">
+            <path class="studio-shell-accent" d="M454.2,611H347v2.8h107.2V611z"/>
+            <path class="studio-shell-foot" d="M370.9,614.8v1.4c0,0.8-0.7,1.5-1.5,1.5h-20.8c-0.8,0-1.5-0.7-1.5-1.5v-1.4H370.9z"/>
+            <path class="studio-shell-foot" d="M454.2,614.8v1.4c0,0.8-0.7,1.5-1.5,1.5H432c-0.8,0-1.5-0.7-1.5-1.5v-1.4H454.2z"/>
+            <path class="studio-shell-body" d="M665,181.4H135.2c-4.2,0-7.7,3.4-7.7,7.7v309.4c0,4.2,3.5,7.7,7.7,7.7h210.9v107.6v2.4c0,1.4,1.1,2.5,2.5,2.5h20.8c1.4,0,2.5-1.1,2.5-2.5v-1.4h57.5v1.4c0,1.4,1.1,2.5,2.5,2.5h20.8c1.4,0,2.5-1.1,2.5-2.5v-110h209.7c4.2,0,7.7-3.4,7.7-7.7V189.1C672.7,184.8,669.2,181.4,665,181.4z M370.9,616.2c0,0.8-0.7,1.5-1.5,1.5h-20.8c-0.8,0-1.5-0.7-1.5-1.5v-1.4h23.8V616.2z M454.2,616.2c0,0.8-0.7,1.5-1.5,1.5H432c-0.8,0-1.5-0.7-1.5-1.5v-1.4h23.8V616.2z M454.2,613.8H347V611h107.2V613.8z M454.2,610H347V506.1h35.1c0.2,2.8,2,16.4,18.5,16.4s18.3-13.6,18.5-16.4h35.1V610L454.2,610z M383.1,506.1h35c-0.2,2.7-1.8,15.4-17.5,15.4C384.9,521.5,383.2,508.9,383.1,506.1z M671.7,498.5c0,3.7-3,6.7-6.7,6.7H135.2c-3.7,0-6.7-3-6.7-6.7V189.1c0-3.7,3-6.7,6.7-6.7h529.7c3.7,0,6.7,3,6.7,6.7L671.7,498.5L671.7,498.5z"/>
+            <path class="studio-shell-metal" d="M454.2,506.1V610H347V506.1h35.1c0.2,2.8,2,16.4,18.5,16.4s18.3-13.6,18.5-16.4H454.2z"/>
+            <path class="studio-shell-metal" d="M665,182.4H135.2c-3.7,0-6.7,3-6.7,6.7v309.4c0,3.7,3,6.7,6.7,6.7h529.7c3.7,0,6.7-3,6.7-6.7V189.1C671.7,185.4,668.7,182.4,665,182.4z M654.5,490.1h-509V197.4h509V490.1z"/>
+            <path class="studio-shell-body" d="M145.6,197.4v292.9h509V197.4H145.6z M653.5,489.1h-507V198.4h507V489.1z"/>
+          </svg>
           <div class="mac-display">
             <div class="mac-window-bar"></div>
             <div class="wallpaper-canvas">
@@ -101,11 +153,10 @@
                 </div>
                 <div class="mac-menu-status">
                   <span class="mac-wifi-icon">
-                    <svg viewBox="0 0 18 14" aria-hidden="true">
-                      <path d="M1.5 4.7a11.2 11.2 0 0 1 15 0"></path>
-                      <path d="M4.7 7.4a6.5 6.5 0 0 1 8.6 0"></path>
-                      <path d="M7.5 10.1a2.4 2.4 0 0 1 3 0"></path>
-                      <circle cx="9" cy="12" r="1"></circle>
+                    <svg viewBox="0 0 20 14" aria-hidden="true">
+                      <path d="M10 1.5c3.08 0 5.96 1.04 8.25 2.94.36.3.39.84.06 1.17l-.82.83a.82.82 0 0 1-1.08.06A10.05 10.05 0 0 0 10 4.28 10.05 10.05 0 0 0 3.59 6.5a.82.82 0 0 1-1.08-.06l-.82-.83a.78.78 0 0 1 .06-1.17A12.93 12.93 0 0 1 10 1.5Z"></path>
+                      <path d="M10 5.7c1.88 0 3.65.62 5.08 1.77.37.3.4.86.06 1.2l-.84.84a.82.82 0 0 1-1.04.08A5.42 5.42 0 0 0 10 8.5a5.42 5.42 0 0 0-3.26 1.09.82.82 0 0 1-1.04-.08l-.84-.84a.8.8 0 0 1 .06-1.2A8.02 8.02 0 0 1 10 5.7Z"></path>
+                      <path d="M10 9.9c.8 0 1.55.26 2.16.73.39.3.42.9.07 1.25l-1.67 1.67a.8.8 0 0 1-1.12 0l-1.67-1.67a.82.82 0 0 1 .07-1.25A3.55 3.55 0 0 1 10 9.9Z"></path>
                     </svg>
                   </span>
                   <span class="mac-clock" data-menubar-clock>Mon May 4 09:41:00</span>
@@ -379,6 +430,73 @@
     </footer>
     </div>
     <script>
+      (() => {
+        const root = document.documentElement;
+        const controls = Array.from(document.querySelectorAll("[data-theme-choice]"));
+        const themeColor = document.querySelector("[data-theme-color]");
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        const validPreferences = new Set(["system", "dark", "light"]);
+
+        const storedTheme = () => {
+          try {
+            const value = window.localStorage.getItem("theme");
+            return validPreferences.has(value) ? value : "system";
+          } catch {
+            return "system";
+          }
+        };
+
+        const persistTheme = (preference) => {
+          try {
+            window.localStorage.setItem("theme", preference);
+          } catch {
+            // Theme switching still works without storage.
+          }
+        };
+
+        const resolveTheme = (preference) => {
+          if (preference === "dark" || preference === "light") {
+            return preference;
+          }
+
+          return mediaQuery.matches ? "dark" : "light";
+        };
+
+        const applyTheme = (preference, persist = false) => {
+          const nextPreference = validPreferences.has(preference) ? preference : "system";
+          const nextTheme = resolveTheme(nextPreference);
+          root.dataset.theme = nextTheme;
+          root.dataset.themePreference = nextPreference;
+          root.style.colorScheme = nextTheme;
+
+          if (themeColor) {
+            themeColor.setAttribute("content", nextTheme === "dark" ? "#05070a" : "#f5f5f7");
+          }
+
+          controls.forEach((control) => {
+            control.setAttribute("aria-pressed", String(control.dataset.themeChoice === nextPreference));
+          });
+
+          if (persist) {
+            persistTheme(nextPreference);
+          }
+        };
+
+        applyTheme(root.dataset.themePreference || storedTheme());
+
+        controls.forEach((control) => {
+          control.addEventListener("click", () => {
+            applyTheme(control.dataset.themeChoice, true);
+          });
+        });
+
+        mediaQuery.addEventListener("change", () => {
+          if (root.dataset.themePreference === "system") {
+            applyTheme("system");
+          }
+        });
+      })();
+
       (() => {
         const clock = document.querySelector("[data-menubar-clock]");
 

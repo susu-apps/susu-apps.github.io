@@ -8987,8 +8987,8 @@ body::before {
   position: relative;
   display: block;
   width: 100%;
-  max-width: min(100%, 760px);
-  aspect-ratio: 981 / 836;
+  max-width: min(100%, 680px);
+  aspect-ratio: 560 / 455;
   justify-self: center;
   overflow: visible;
   padding: 0;
@@ -9001,7 +9001,6 @@ body::before {
 .deskimia-preview::before,
 .deskimia-preview::after {
   content: "";
-  display: none;
   position: absolute;
   left: 50%;
   z-index: 0;
@@ -9009,55 +9008,54 @@ body::before {
   pointer-events: none;
 }
 
-.studio-display-mockup {
+.deskimia-preview::before {
+  display: none;
+}
+
+.deskimia-preview::after {
+  display: block;
+  top: 90.8%;
+  z-index: 0;
+  width: 44%;
+  height: 8%;
+  border-radius: 999px;
+  background: rgba(18, 34, 50, 0.18);
+  filter: blur(18px);
+  box-shadow: none;
+}
+
+.studio-display-shell {
   position: absolute;
   inset: 0;
   z-index: 1;
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: contain;
-  filter: drop-shadow(0 24px 48px rgba(18, 34, 50, 0.12));
+  overflow: visible;
+  filter: drop-shadow(0 18px 32px rgba(18, 34, 50, 0.13));
   pointer-events: none;
-  user-select: none;
 }
 
-.deskimia-preview::before {
-  bottom: clamp(30px, 2.8vw, 44px);
-  width: clamp(78px, 9.4vw, 136px);
-  height: clamp(38px, 3.8vw, 58px);
-  border-radius: 0 0 clamp(18px, 1.7vw, 26px) clamp(18px, 1.7vw, 26px);
-  background:
-    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.92), transparent 58%),
-    linear-gradient(90deg, rgba(198, 209, 221, 0.78), rgba(241, 246, 251, 0.95) 44%, rgba(205, 216, 228, 0.86));
-  box-shadow:
-    0 14px 28px rgba(16, 34, 52, 0.09),
-    inset 0 1px 0 rgba(255, 255, 255, 0.96),
-    inset 0 -1px 0 rgba(15, 36, 55, 0.08);
+.studio-shell-accent,
+.studio-shell-metal {
+  fill: #d9d9d9;
 }
 
-.deskimia-preview::after {
-  bottom: clamp(14px, 1.35vw, 22px);
-  width: clamp(176px, 23vw, 330px);
-  height: clamp(16px, 1.35vw, 22px);
-  border-radius: 999px;
-  background:
-    linear-gradient(180deg, rgba(247, 251, 255, 0.96), rgba(207, 219, 232, 0.9)),
-    #e3ebf4;
-  box-shadow:
-    0 16px 34px rgba(18, 34, 50, 0.14),
-    0 2px 8px rgba(18, 34, 50, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.96),
-    inset 0 -1px 0 rgba(8, 24, 38, 0.08);
+.studio-shell-foot {
+  fill: #747a80;
+}
+
+.studio-shell-body {
+  fill: #25282b;
 }
 
 .mac-display {
   position: absolute;
   z-index: 2;
-  top: 2.72%;
-  left: 2.14%;
-  width: 95.62%;
-  height: 63.04%;
+  top: 5.14%;
+  left: 4.74%;
+  width: 90.54%;
+  height: 63.9%;
   min-height: 0;
   aspect-ratio: auto;
   display: grid;
@@ -9074,13 +9072,15 @@ body::before {
   display: none;
   position: absolute;
   left: 50%;
-  bottom: clamp(-12px, -0.7vw, -7px);
-  z-index: -1;
-  width: clamp(96px, 18vw, 240px);
-  height: clamp(12px, 1vw, 18px);
+  top: clamp(2px, 0.32vw, 5px);
+  z-index: 5;
+  width: clamp(5px, 0.6vw, 8px);
+  height: clamp(5px, 0.6vw, 8px);
   border-radius: 999px;
-  background: rgba(105, 126, 148, 0.16);
-  filter: blur(5px);
+  background:
+    radial-gradient(circle at 44% 38%, rgba(54, 71, 89, 0.72), rgba(5, 8, 12, 0.92) 62%),
+    #05070a;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.16);
   transform: translateX(-50%);
   pointer-events: none;
 }
@@ -9090,11 +9090,11 @@ body::before {
   display: none;
   position: absolute;
   left: 50%;
-  bottom: clamp(6px, 0.7vw, 9px);
-  width: clamp(42px, 5.2vw, 76px);
-  height: 4px;
+  bottom: clamp(2px, 0.32vw, 5px);
+  width: 16%;
+  height: clamp(2px, 0.28vw, 4px);
   border-radius: 999px;
-  background: linear-gradient(90deg, transparent, rgba(20, 32, 48, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
   transform: translateX(-50%);
   pointer-events: none;
 }
@@ -9193,14 +9193,8 @@ body::before {
 }
 
 .mac-wifi-icon path {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.45;
-  stroke-linecap: round;
-}
-
-.mac-wifi-icon circle {
   fill: currentColor;
+  stroke: none;
 }
 
 .mac-clock {
@@ -9309,23 +9303,20 @@ body::before {
 
 @media (max-width: 760px) {
   .deskimia-preview {
-    max-width: 360px;
+    max-width: 390px;
     min-height: 0;
     margin-inline: auto;
     padding: 0;
   }
 
   .deskimia-preview::before {
-    bottom: 25px;
-    width: 88px;
-    height: 36px;
-    border-radius: 0 0 19px 19px;
+    display: none;
   }
 
   .deskimia-preview::after {
-    bottom: 12px;
-    width: 184px;
-    height: 15px;
+    top: 90.8%;
+    width: 44%;
+    height: 8%;
   }
 
   .mac-display {
@@ -9391,6 +9382,256 @@ body::before {
 
 .coming-soon {
   margin-top: clamp(10px, 1.2vw, 18px);
+}
+
+/* Avoid card-in-card in the history feature: the wrapper is just layout. */
+.suite-showcase {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* Theme switcher and dark theme support. */
+.nav {
+  gap: clamp(12px, 1.6vw, 24px);
+}
+
+.nav-links {
+  margin-left: auto;
+}
+
+.theme-switcher {
+  height: 38px;
+  display: inline-grid;
+  grid-template-columns: repeat(3, 32px);
+  align-items: center;
+  gap: 2px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  padding: 3px;
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow:
+    0 0 0 1px rgba(12, 118, 200, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82);
+}
+
+.theme-choice {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  padding: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition:
+    background-color var(--motion-medium) var(--motion-ease),
+    box-shadow var(--motion-medium) var(--motion-ease),
+    color var(--motion-fast) var(--motion-ease),
+    transform var(--motion-fast) var(--motion-ease);
+}
+
+.theme-choice-icon {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.theme-choice:hover {
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.theme-choice:active {
+  transform: scale(0.94);
+}
+
+.theme-choice[aria-pressed="true"] {
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--text);
+  box-shadow:
+    0 0 0 1px rgba(12, 118, 200, 0.12),
+    0 8px 18px rgba(12, 80, 124, 0.12);
+}
+
+.theme-choice:focus-visible {
+  outline: 2px solid rgba(12, 118, 200, 0.72);
+  outline-offset: 3px;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #05070a;
+  --canvas: #070b11;
+  --surface: #0d1219;
+  --surface-muted: #101722;
+  --surface-raised: #121a25;
+  --surface-translucent: rgba(14, 19, 27, 0.82);
+  --panel: rgba(14, 19, 27, 0.78);
+  --text: #f2f7fb;
+  --muted: #9eafc1;
+  --subtle: rgba(255, 255, 255, 0.1);
+  --faint: rgba(255, 255, 255, 0.055);
+  --image-outline: rgba(255, 255, 255, 0.12);
+  --accent: #58b7ff;
+  --accent-strong: #8bd0ff;
+  --accent-soft: rgba(88, 183, 255, 0.12);
+  --accent-border: rgba(88, 183, 255, 0.38);
+  --history: #f2f7fb;
+  --history-soft: rgba(255, 255, 255, 0.075);
+  --shadow-ring: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --shadow-ring-hover: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+
+html[data-theme="dark"],
+html[data-theme="dark"] body {
+  background: var(--bg);
+}
+
+html[data-theme="dark"] .site-canvas {
+  background:
+    linear-gradient(90deg, rgba(118, 190, 255, 0.085) 1px, transparent 1px) 0 0 / 72px 72px,
+    linear-gradient(0deg, rgba(118, 190, 255, 0.06) 1px, transparent 1px) 0 0 / 72px 72px,
+    var(--canvas);
+}
+
+html[data-theme="dark"] .site-canvas::before,
+html[data-theme="dark"] .site-canvas::after,
+html[data-theme="dark"] .coming-soon::before {
+  display: none;
+  background: none;
+}
+
+html[data-theme="dark"] .site-header {
+  color: var(--text);
+  mix-blend-mode: normal;
+}
+
+html[data-theme="dark"] .nav-links a,
+html[data-theme="dark"] .mobile-nav summary,
+html[data-theme="dark"] .mobile-nav-panel a,
+html[data-theme="dark"] .site-footer,
+html[data-theme="dark"] .site-footer a {
+  color: var(--text);
+}
+
+html[data-theme="dark"] .coming-soon,
+html[data-theme="dark"] .stats,
+html[data-theme="dark"] .suite-copy,
+html[data-theme="dark"] .suite-lead,
+html[data-theme="dark"] .suite-feature-grid div,
+html[data-theme="dark"] .suite-icon-row,
+html[data-theme="dark"] .privacy-panel,
+html[data-theme="dark"] .privacy-links a,
+html[data-theme="dark"] .history-editions a,
+html[data-theme="dark"] #apps .app-card,
+html[data-theme="dark"] .mobile-nav-panel {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: var(--panel);
+  box-shadow: none;
+}
+
+html[data-theme="dark"] .suite-showcase {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+html[data-theme="dark"] .button-secondary,
+html[data-theme="dark"] .deskimia-tags span,
+html[data-theme="dark"] .since-2010 {
+  background: rgba(255, 255, 255, 0.075);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="dark"] .button-secondary,
+html[data-theme="dark"] .deskimia-tags span {
+  color: var(--text);
+}
+
+html[data-theme="dark"] .button-primary,
+html[data-theme="dark"] .suite-actions .button-primary {
+  background: var(--accent);
+  color: #03101b;
+}
+
+html[data-theme="dark"] .theme-switcher {
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="dark"] .theme-choice {
+  color: var(--muted);
+}
+
+html[data-theme="dark"] .theme-choice:hover,
+html[data-theme="dark"] .theme-choice[aria-pressed="true"] {
+  color: var(--text);
+}
+
+html[data-theme="dark"] .theme-choice[aria-pressed="true"] {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+html[data-theme="dark"] .app-icon,
+html[data-theme="dark"] .deskimia-icon,
+html[data-theme="dark"] .history-editions img,
+html[data-theme="dark"] .suite-lead img,
+html[data-theme="dark"] .suite-icon-row img {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+html[data-theme="dark"] .studio-display-shell {
+  filter: drop-shadow(0 22px 38px rgba(0, 0, 0, 0.34));
+}
+
+html[data-theme="dark"] .deskimia-preview::after {
+  background: rgba(0, 0, 0, 0.36);
+}
+
+html[data-theme="dark"] .studio-shell-accent,
+html[data-theme="dark"] .studio-shell-metal {
+  fill: #b9c1c9;
+}
+
+html[data-theme="dark"] .studio-shell-foot {
+  fill: #8d969f;
+}
+
+html[data-theme="dark"] .studio-shell-body {
+  fill: #050608;
+}
+
+html[data-theme="dark"] .footer-illustration {
+  opacity: 0.36;
+  filter: brightness(0.58) saturate(0.76);
+}
+
+html[data-theme="dark"] .footer-row p,
+html[data-theme="dark"] .footer-row a {
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+}
+
+html[data-theme="dark"] .store-link {
+  color: var(--accent-strong);
+}
+
+@media (max-width: 760px) {
+  .theme-switcher {
+    margin-left: auto;
+  }
 }
 
 @keyframes monitor-wallpaper-drift {
