@@ -9493,6 +9493,10 @@ html[data-theme="dark"] .deskimia-title-logo-image.is-dark {
   gap: clamp(12px, 1.6vw, 24px);
 }
 
+.site-header {
+  z-index: 20;
+}
+
 .nav-links {
   margin-left: auto;
 }
@@ -9789,6 +9793,11 @@ html[data-theme="dark"] .store-link {
 
   .mobile-nav-panel {
     width: min(72vw, 240px);
+    z-index: 30;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow:
+      0 0 0 1px rgba(12, 118, 200, 0.13),
+      0 18px 42px rgba(12, 80, 124, 0.18);
   }
 
   .coming-soon {
@@ -9870,6 +9879,13 @@ html[data-theme="dark"] .store-link {
   .mac-clock {
     min-width: 11.2ch;
   }
+}
+
+html[data-theme="dark"] .mobile-nav-panel {
+  background: rgba(14, 19, 27, 0.96);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 18px 42px rgba(0, 0, 0, 0.34);
 }
 
 /* Privacy pages: use the same product-site language as the homepage. */
