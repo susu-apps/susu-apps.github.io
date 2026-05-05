@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
   <title id="title">Deskimia app icon</title>
-  <desc id="desc">A macOS 26 style icon with a custom monitor outline and flowing live desktop wallpaper.</desc>
+  <desc id="desc">A macOS 26 style icon with a custom monitor outline showing a sailboat riding ocean waves.</desc>
   <defs>
     <linearGradient id="base" x1="120" y1="96" x2="904" y2="928" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#FFFFFF"/>
@@ -13,19 +13,39 @@
       <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="screen" x1="210" y1="284" x2="814" y2="670" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#0FB8AA"/>
-      <stop offset=".48" stop-color="#126DBD"/>
-      <stop offset="1" stop-color="#171C61"/>
+      <stop offset="0" stop-color="#B7F4FF"/>
+      <stop offset=".46" stop-color="#3BB8E9"/>
+      <stop offset="1" stop-color="#1453A7"/>
     </linearGradient>
-    <linearGradient id="flowA" x1="172" y1="360" x2="856" y2="622" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#B8F45E"/>
-      <stop offset=".5" stop-color="#55EED0"/>
-      <stop offset="1" stop-color="#91A7FF"/>
+    <linearGradient id="ocean" x1="210" y1="500" x2="814" y2="700" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1FD6CF"/>
+      <stop offset=".52" stop-color="#1177C8"/>
+      <stop offset="1" stop-color="#1767B8"/>
     </linearGradient>
-    <linearGradient id="flowB" x1="178" y1="624" x2="846" y2="496" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#EEFDD4"/>
-      <stop offset=".46" stop-color="#AEEF5F"/>
-      <stop offset="1" stop-color="#44DFC2"/>
+    <linearGradient id="waveA" x1="164" y1="540" x2="864" y2="684" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F7FFEA"/>
+      <stop offset=".45" stop-color="#74F1DE"/>
+      <stop offset="1" stop-color="#B9D4FF"/>
+    </linearGradient>
+    <linearGradient id="waveB" x1="178" y1="662" x2="846" y2="558" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#D8FFF2"/>
+      <stop offset=".52" stop-color="#98EEE8"/>
+      <stop offset="1" stop-color="#8ABDF0"/>
+    </linearGradient>
+    <linearGradient id="sailMain" x1="358" y1="344" x2="502" y2="594" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset=".64" stop-color="#F6FEFF"/>
+      <stop offset="1" stop-color="#D8F3FF"/>
+    </linearGradient>
+    <linearGradient id="sailFront" x1="522" y1="374" x2="656" y2="584" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset=".58" stop-color="#ECFBFF"/>
+      <stop offset="1" stop-color="#C5EBFF"/>
+    </linearGradient>
+    <linearGradient id="hull" x1="322" y1="590" x2="710" y2="642" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset=".62" stop-color="#F4FDFF"/>
+      <stop offset="1" stop-color="#CDEEFF"/>
     </linearGradient>
     <linearGradient id="monitorFace" x1="198" y1="236" x2="804" y2="908" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#FFFFFF"/>
@@ -38,7 +58,7 @@
       <stop offset="1" stop-color="#31546E"/>
     </linearGradient>
     <clipPath id="screenClip">
-      <rect x="210" y="284" width="604" height="386" rx="82"/>
+      <rect x="220" y="294" width="584" height="366" rx="72"/>
     </clipPath>
   </defs>
 
@@ -50,10 +70,17 @@
   <path d="M284 226H740C808 226 864 282 864 350V602C864 670 808 726 740 726H572C562 726 554 734 554 744V800C554 814 566 826 580 826H658C685 826 706 848 706 874C706 900 685 922 658 922H366C339 922 318 900 318 874C318 848 339 826 366 826H444C458 826 470 814 470 800V744C470 734 462 726 452 726H284C216 726 160 670 160 602V350C160 282 216 226 284 226Z" fill="url(#monitorFace)" opacity=".96"/>
   <path d="M284 226H740C808 226 864 282 864 350V602C864 670 808 726 740 726H572C562 726 554 734 554 744V800C554 814 566 826 580 826H658C685 826 706 848 706 874C706 900 685 922 658 922H366C339 922 318 900 318 874C318 848 339 826 366 826H444C458 826 470 814 470 800V744C470 734 462 726 452 726H284C216 726 160 670 160 602V350C160 282 216 226 284 226Z" fill="none" stroke="url(#monitorEdge)" stroke-width="38" stroke-linejoin="round"/>
 
-  <rect x="210" y="284" width="604" height="386" rx="82" fill="url(#screen)" stroke="#F2FDFF" stroke-width="10" stroke-opacity=".78"/>
+  <rect x="204" y="278" width="616" height="398" rx="88" fill="#F7FDFF" opacity=".88"/>
+  <rect x="220" y="294" width="584" height="366" rx="72" fill="url(#screen)"/>
   <g clip-path="url(#screenClip)">
-    <path d="M150 438C292 348 424 372 548 322C664 276 768 318 874 300V450C748 508 634 512 526 472C396 424 272 450 150 538Z" fill="url(#flowA)" opacity=".9"/>
-    <path d="M160 612C300 540 424 546 552 602C658 648 748 624 864 552V704H160Z" fill="url(#flowB)" opacity=".93"/>
-    <path d="M208 644C330 600 456 616 572 674C660 718 760 714 816 674V704H208Z" fill="#FFFFFF" opacity=".16"/>
+    <path d="M148 520C276 486 392 500 512 476C640 450 752 464 876 426V704H148Z" fill="url(#ocean)" opacity=".96"/>
+    <path d="M144 558C286 506 414 540 532 522C664 502 754 474 872 496V570C744 590 650 616 520 594C398 574 282 584 144 642Z" fill="url(#waveA)" opacity=".76"/>
+    <path d="M154 676C292 654 420 666 544 690C654 712 750 704 864 674V724H154Z" fill="url(#waveB)" opacity=".28"/>
+    <path d="M220 548C300 528 382 530 456 548M596 534C670 514 734 514 810 526" fill="none" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" stroke-opacity=".28"/>
+    <path d="M512 330V610" fill="none" stroke="#FFFFFF" stroke-width="22" stroke-linecap="round"/>
+    <path d="M492 346L374 548H492Z" fill="url(#sailMain)"/>
+    <path d="M532 374L650 576H532Z" fill="url(#sailFront)"/>
+    <path d="M314 592C374 650 650 650 710 592C634 616 390 616 314 592Z" fill="url(#hull)"/>
+    <path d="M160 704C292 674 420 682 544 710C654 736 752 722 864 688V724H160Z" fill="#FFFFFF" opacity=".04"/>
   </g>
 </svg>
