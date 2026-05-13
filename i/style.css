@@ -8794,6 +8794,22 @@ html[data-theme="dark"] .deskimia-title-logo-image.is-dark {
   grid-row: 4;
 }
 
+.deskimia-actions {
+  grid-column: 1;
+  grid-row: 5;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: clamp(6px, 0.7vw, 10px);
+}
+
+.deskimia-actions .button {
+  width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+
 .deskimia-preview {
   align-self: stretch;
   margin-top: 0;
@@ -9086,7 +9102,7 @@ html[data-theme="dark"] .deskimia-title-logo-image.is-dark {
   display: block;
   width: 100%;
   max-width: min(100%, 680px);
-  aspect-ratio: 560 / 455;
+  aspect-ratio: 545.102 / 437.3;
   justify-self: center;
   overflow: visible;
   padding: 0;
@@ -9150,10 +9166,10 @@ html[data-theme="dark"] .deskimia-title-logo-image.is-dark {
 .mac-display {
   position: absolute;
   z-index: 2;
-  top: 5.14%;
-  left: 4.74%;
-  width: 90.54%;
-  height: 63.9%;
+  top: 3.66%;
+  left: 3.32%;
+  width: 93.38%;
+  height: 66.98%;
   min-height: 0;
   aspect-ratio: auto;
   display: grid;
@@ -9399,11 +9415,18 @@ html[data-theme="dark"] .deskimia-title-logo-image.is-dark {
   }
 }
 
+@media (max-width: 959px) {
+  .deskimia-preview {
+    max-width: none;
+    justify-self: stretch;
+  }
+}
+
 @media (max-width: 760px) {
   .deskimia-preview {
-    max-width: 390px;
+    max-width: none;
     min-height: 0;
-    margin-inline: auto;
+    margin-inline: 0;
     padding: 0;
   }
 
@@ -9821,7 +9844,8 @@ html[data-theme="dark"] .store-link {
   .deskimia-copy .eyebrow,
   .deskimia-copy h2,
   .deskimia-copy p:not(.eyebrow),
-  .deskimia-tags {
+  .deskimia-tags,
+  .deskimia-actions {
     grid-column: 1;
     grid-row: auto;
     width: 100%;
@@ -9854,10 +9878,10 @@ html[data-theme="dark"] .store-link {
 
   .deskimia-preview {
     width: 100%;
-    max-width: 360px;
+    max-width: none;
     min-height: 0;
-    aspect-ratio: 560 / 455;
-    justify-self: center;
+    aspect-ratio: 545.102 / 437.3;
+    justify-self: stretch;
   }
 
   .mac-menu-bar {
