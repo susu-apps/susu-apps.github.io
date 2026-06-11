@@ -8789,14 +8789,33 @@ html[data-theme="dark"] .deskimia-title-logo-image.is-dark {
   grid-row: 3;
 }
 
-.deskimia-tags {
+.deskimia-copy p.deskimia-social-tip {
+  grid-column: 1;
+  grid-row: 3;
+  color: var(--text);
+}
+
+.deskimia-copy p.deskimia-description {
   grid-column: 1;
   grid-row: 4;
 }
 
-.deskimia-actions {
+.deskimia-social-tip a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.deskimia-tags {
   grid-column: 1;
   grid-row: 5;
+}
+
+.deskimia-actions {
+  grid-column: 1;
+  grid-row: 6;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
