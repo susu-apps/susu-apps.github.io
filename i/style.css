@@ -10943,9 +10943,7 @@ html[data-theme="dark"] .hero .button-secondary {
   width: 100%;
   aspect-ratio: 1;
   border-radius: 14px;
-  box-shadow:
-    0 0 0 1px rgba(20, 32, 51, 0.08),
-    0 8px 20px rgba(20, 32, 51, 0.08);
+  box-shadow: 0 8px 20px rgba(20, 32, 51, 0.08);
 }
 
 .hero-product span,
@@ -12992,4 +12990,19 @@ html[data-theme="dark"] .theme-app-icon-image.is-light {
 
 html[data-theme="dark"] .theme-app-icon-image.is-dark {
   opacity: 1;
+}
+
+/* Current App Store metadata includes longer official names; let compact app lists wrap instead of clipping. */
+.hero-product-row strong,
+.history-editions span {
+  overflow: visible;
+  overflow-wrap: anywhere;
+  text-overflow: clip;
+  white-space: normal;
+}
+
+#apps .app-body p:not(.meta) {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
 }
