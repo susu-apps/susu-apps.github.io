@@ -48,7 +48,8 @@
       })();
     </script>
     <link rel="preload" href="i/fonts/HankenGrotesk-wght.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="i/style.css?v=20260617-appstore-metadata">
+    <link rel="preload" href="i/deskimia-monitor-poster.jpg" as="image">
+    <link rel="stylesheet" href="i/style.css?v=20260627-narrow-polish">
     <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="i/susuapps-favicon-32.png" media="(prefers-color-scheme: light)">
     <link rel="icon" type="image/png" sizes="32x32" href="i/susuapps-favicon-32-dark.png" media="(prefers-color-scheme: dark)">
@@ -61,128 +62,98 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
   </head>
-  <body>
-    <div class="site-canvas">
-    <header class="site-header">
-      <nav class="nav" aria-label="Main navigation">
-        <a class="brand" href="/" aria-label="Homepage">
-          <span class="brand-mark" aria-hidden="true">
-            <img src="i/susuapps-logo-mark.svg" alt="">
-          </span>
-          <span>Susuapps</span>
-        </a>
-        <div class="nav-links">
-          <a href="#history">Features</a>
-          <a href="#apps">Apps</a>
-          <a href="#deskimia">Deskimia</a>
-          <a href="privacy/en.html">Privacy</a>
-          <a href="mailto:susuapps@gmail.com">Support</a>
-        </div>
-        <div class="theme-switcher" role="group" aria-label="Theme preference">
-          <button class="theme-choice" type="button" aria-label="Follow system theme" aria-pressed="true" title="System" data-theme-choice="system">
-            <svg class="theme-choice-icon" aria-hidden="true" viewBox="0 0 24 24">
-              <path d="M4.75 6.75A2.75 2.75 0 0 1 7.5 4h9a2.75 2.75 0 0 1 2.75 2.75v6.5A2.75 2.75 0 0 1 16.5 16h-9a2.75 2.75 0 0 1-2.75-2.75v-6.5Z"/>
-              <path d="M9.25 20h5.5"/>
-              <path d="M12 16v4"/>
-            </svg>
-          </button>
-          <button class="theme-choice" type="button" aria-label="Use dark theme" aria-pressed="false" title="Dark" data-theme-choice="dark">
-            <svg class="theme-choice-icon" aria-hidden="true" viewBox="0 0 24 24">
-              <path d="M18.5 14.36A7.15 7.15 0 0 1 9.64 5.5a7.65 7.65 0 1 0 8.86 8.86Z"/>
-            </svg>
-          </button>
-          <button class="theme-choice" type="button" aria-label="Use light theme" aria-pressed="false" title="Light" data-theme-choice="light">
-            <svg class="theme-choice-icon" aria-hidden="true" viewBox="0 0 24 24">
-              <path d="M12 8.25a3.75 3.75 0 1 1 0 7.5 3.75 3.75 0 0 1 0-7.5Z"/>
-              <path d="M12 2.75v2.1"/>
-              <path d="M12 19.15v2.1"/>
-              <path d="m4.06 4.06 1.49 1.49"/>
-              <path d="m18.45 18.45 1.49 1.49"/>
-              <path d="M2.75 12h2.1"/>
-              <path d="M19.15 12h2.1"/>
-              <path d="m4.06 19.94 1.49-1.49"/>
-              <path d="m18.45 5.55 1.49-1.49"/>
-            </svg>
-          </button>
-        </div>
-        <details class="mobile-nav">
-          <summary aria-label="Open navigation">
-            <span>Menu</span>
-          </summary>
-          <div class="mobile-nav-panel">
-            <a href="#history">Features</a>
-            <a href="#apps">Apps</a>
-            <a href="#deskimia">Deskimia</a>
-            <a href="privacy/en.html">Privacy</a>
-            <a href="mailto:susuapps@gmail.com">Support</a>
-          </div>
-        </details>
-      </nav>
-    </header>
-
+  <body class="home-page">
+    <div class="site-canvas home-canvas">
     <main class="page-shell">
       <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-cover-cloud" aria-hidden="true">
+          <span class="hero-cover hero-cover-deskimia">
+            <img src="i/deskimia-app-icon.png" alt="">
+          </span>
+          <span class="hero-cover hero-cover-history">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/59/f8/56/59f8560c-b2be-c40b-d753-e6f6b218fd4b/OnThisDay-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
+          </span>
+          <span class="hero-cover hero-cover-maps">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/47/f2/3a/47f23a7b-23a8-9106-e14e-05c39e141932/Icon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
+          </span>
+          <span class="hero-cover hero-cover-hsk">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/01/c0/fe/01c0fe47-cd76-f80f-66b9-a24963baae63/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
+          </span>
+          <span class="hero-cover hero-cover-pinyin">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/97/4a/5c/974a5c35-b3b8-f2d2-71a1-b8447aafaa92/pinyinizer-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
+          </span>
+          <span class="hero-cover hero-cover-jlpt">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d0/9d/71/d09d7115-3b8e-eb92-d457-7f3d84ce8224/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
+          </span>
+          <span class="hero-cover hero-cover-pinyin-table">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/67/7a/4d/677a4d3e-e717-3a46-9e30-dc06e1b774bf/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
+          </span>
+          <span class="hero-cover hero-cover-radical">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1a/a8/9e/1aa89ead-8e04-1c22-375a-2406629d8fbe/Icon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
+          </span>
+          <span class="hero-cover hero-cover-rocket">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3e/ff/72/3eff7209-d05b-9d5d-7d3d-0b40f0029fe5/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
+          </span>
+          <span class="hero-cover hero-cover-phone">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1c/58/0d/1c580df2-ac3b-fa4e-1880-e0575e2d65c0/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
+          </span>
+          <span class="hero-cover hero-cover-flashlight">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1f/4a/5f/1f4a5f3b-d26e-dbc1-dc9f-c9884025b7df/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
+          </span>
+        </div>
         <div class="hero-heading">
+          <a class="hero-brand-lockup" href="/" aria-label="Homepage">
+            <span class="hero-brand-mark" aria-hidden="true">
+              <img src="i/susuapps-logo-mark.svg" alt="">
+            </span>
+            <span class="hero-brand-name">Susuapps</span>
+          </a>
           <h1 id="hero-title">
             <span class="hero-title-wide">Independent</span>
-            <span class="hero-title-rest">apps for iPhone, iPad, and Mac.</span>
+            <span class="hero-title-rest"><em>Apple</em> Apps</span>
           </h1>
         </div>
 
         <div class="hero-copy">
           <p class="hero-text">
-            Susuapps builds focused Apple platform tools for history, language
-            study, maps, live wallpapers, and quick everyday lookups. <span class="since-2010">since 2010</span>
+            22 focused apps for Mac, iPhone, and iPad: wallpapers, history,
+            maps, language study, and everyday utilities.
           </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="https://apps.apple.com/us/developer/%E6%99%B6%E6%99%B6-%E6%AE%B7/id355709937?uo=4">View on App Store</a>
-            <a class="button button-secondary" href="#apps">Explore apps</a>
-          </div>
         </div>
 
-        <div class="hero-product-panel" aria-label="Selected Susuapps apps">
-          <a class="hero-product hero-product-primary" href="https://apps.apple.com/us/app/deskimia/id6766022809?mt=12&amp;uo=4">
-            <span class="theme-app-icon" aria-hidden="true">
-              <img class="theme-app-icon-image is-light" src="i/deskimia-app-icon.png" alt="">
-              <img class="theme-app-icon-image is-dark" src="i/deskimia-app-icon-dark.png" alt="">
-            </span>
-            <span>
-              <small>Featured Mac app</small>
-              <strong>Deskimia</strong>
-              <em>Deskimia turns your own videos and GIFs into smooth live wallpapers for macOS.</em>
-            </span>
-          </a>
-          <div class="hero-product-list">
-            <a class="hero-product-row" href="https://apps.apple.com/us/app/on-this-day-in-history/id590353719?uo=4">
-              <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/59/f8/56/59f8560c-b2be-c40b-d753-e6f6b218fd4b/OnThisDay-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
-              <span>
-                <strong>On This Day In History.</strong>
-                <small>History suite</small>
-              </span>
-            </a>
-            <a class="hero-product-row" href="https://apps.apple.com/us/app/world-maps-offline-atlas/id430399296?uo=4">
-              <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/47/f2/3a/47f23a7b-23a8-9106-e14e-05c39e141932/Icon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
-              <span>
-                <strong>World Maps — Offline Atlas</strong>
-                <small>Offline atlas</small>
-              </span>
-            </a>
-            <a class="hero-product-row" href="https://apps.apple.com/us/app/hsk-vocabulary-%E6%B1%89%E8%AF%AD%E6%B0%B4%E5%B9%B3%E8%80%83%E8%AF%95%E8%AF%8D%E6%B1%87%E8%A1%A8/id747735889?uo=4">
-              <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/01/c0/fe/01c0fe47-cd76-f80f-66b9-a24963baae63/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
-              <span>
-                <strong>HSK Vocabulary: 汉语水平考试词汇表</strong>
-                <small>Mandarin study</small>
-              </span>
-            </a>
-            <a class="hero-product-row" href="https://apps.apple.com/us/app/pinyinizer-pinyin-converter/id434120323?uo=4">
-              <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/97/4a/5c/974a5c35-b3b8-f2d2-71a1-b8447aafaa92/pinyinizer-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
-              <span>
-                <strong>Pinyinizer — Pinyin Converter</strong>
-                <small>Reading tools</small>
-              </span>
-            </a>
+        <div class="hero-discovery" aria-label="Explore Susuapps apps">
+          <span class="hero-filter">Filter</span>
+          <nav class="hero-categories" aria-label="App categories">
+            <a href="#deskimia">Mac</a>
+            <a href="#apps">iPhone</a>
+            <a href="#apps">iPad</a>
+            <a href="#history">History</a>
+            <a href="#apps">Study</a>
+            <a href="#apps">Utilities</a>
+          </nav>
+        </div>
+
+        <dl class="hero-proof" aria-label="Susuapps highlights">
+          <div>
+            <dt>22</dt>
+            <dd><span class="proof-label-full">App Store listings</span><span class="proof-label-short">listings</span></dd>
           </div>
-          <p class="hero-product-note">21 App Store listings across reference, study, utilities, and macOS.</p>
+          <div>
+            <dt>2010</dt>
+            <dd><span class="proof-label-full">First release</span><span class="proof-label-short">since</span></dd>
+          </div>
+          <div>
+            <dt>Apple</dt>
+            <dd><span class="proof-label-full">iPhone, iPad, and Mac</span><span class="proof-label-short">devices</span></dd>
+          </div>
+        </dl>
+        <div class="hero-brand-strip" aria-label="Featured Susuapps lineup">
+          <span>Deskimia</span>
+          <span>On This Day</span>
+          <span>World Maps</span>
+          <span>HSK Vocabulary</span>
+          <span>Pinyinizer</span>
+          <span>Rocket Keyboard</span>
         </div>
       </section>
 
@@ -210,7 +181,7 @@
             <span>Pro playlists</span>
           </div>
           <div class="deskimia-actions">
-            <a class="button button-primary" href="https://apps.apple.com/us/app/deskimia/id6766022809?mt=12&amp;uo=4">Download free on the App Store</a>
+            <a class="button button-secondary" href="https://apps.apple.com/us/app/deskimia/id6766022809?mt=12&amp;uo=4">Download free on the App Store</a>
           </div>
         </div>
         <div class="deskimia-preview" aria-hidden="true">
@@ -256,13 +227,13 @@
 
       <dl class="stats">
         <dt>App Store listings</dt>
-        <dd>21</dd>
+        <dd>22</dd>
         <dt>History editions</dt>
         <dd>11</dd>
         <dt>First release</dt>
         <dd>2010</dd>
         <dt>Latest update</dt>
-        <dd>Jun 23, 2026</dd>
+        <dd>Jun 25, 2026</dd>
       </dl>
 
       <section class="section history-suite" id="history" aria-labelledby="history-title">
@@ -273,7 +244,7 @@
             History happens every day. You miss it every day. HistoryToday turns the calendar into a story you swipe through.
           </p>
           <div class="suite-actions">
-            <a class="button button-primary" href="https://apps.apple.com/us/app/on-this-day-in-history/id590353719?uo=4">English edition</a>
+            <a class="button button-secondary" href="https://apps.apple.com/us/app/on-this-day-in-history/id590353719?uo=4">English edition</a>
             <a class="button button-secondary" href="https://apps.apple.com/us/app/%E5%8E%86%E5%8F%B2%E4%B8%8A%E7%9A%84%E4%BB%8A%E5%A4%A9-%E5%89%8D%E4%BA%8B%E4%B8%8D%E5%BF%98-%E5%90%8E%E4%BA%8B%E4%B9%8B%E5%B8%88/id543897063?uo=4">中文版</a>
           </div>
         </div>
@@ -282,9 +253,9 @@
           <div class="suite-lead">
             <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/59/f8/56/59f8560c-b2be-c40b-d753-e6f6b218fd4b/OnThisDay-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
             <div>
-              <span>On This Day In History.</span>
-              <strong>11 App Store editions</strong>
-              <small>History happens every day. You miss it every day. HistoryToday turns the calendar into a story you swipe through. Story Reel: every event full-screen, with a hero photo and Wikipedia inline. 1M+ users worldwide. Focused daily reading, with an optional one-time upgrade and no subscription.</small>
+              <div class="suite-lead-kicker">On This Day In History.</div>
+              <div class="suite-lead-title">11 App Store editions</div>
+              <p class="suite-lead-description">A daily history suite with full-screen event reels, hero photos, inline Wikipedia, widgets, and optional one-time upgrades.</p>
             </div>
           </div>
           <div class="suite-feature-grid">
@@ -321,11 +292,11 @@
           </a>
           <a href="https://apps.apple.com/us/app/%E5%8E%86%E5%8F%B2%E4%B8%8A%E7%9A%84%E4%BB%8A%E5%A4%A9-%E5%89%8D%E4%BA%8B%E4%B8%8D%E5%BF%98-%E5%90%8E%E4%BA%8B%E4%B9%8B%E5%B8%88/id543897063?uo=4">
             <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/93/63/57/93635795-c21b-edac-f1de-8cf809a05f9b/HistoryTodayCN-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
-            <span>历史上的今天——前事不忘，后事之师</span>
+            <span class="fit-title">历史上的今天<span class="title-tail">——前事不忘，后事之师</span></span>
           </a>
           <a href="https://apps.apple.com/us/app/%E6%AD%B7%E5%8F%B2%E4%B8%8A%E7%9A%84%E4%BB%8A%E5%A4%A9-%E5%89%8D%E4%BA%8B%E4%B8%8D%E5%BF%98-%E5%BE%8C%E4%BA%8B%E4%B9%8B%E5%B8%AB/id989675443?uo=4">
             <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c9/25/82/c92582de-f352-10b4-71f3-42164754fd4f/HistoryTodayTW-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
-            <span>歷史上的今天：前事不忘，後事之師</span>
+            <span class="fit-title">歷史上的今天<span class="title-tail">：前事不忘，後事之師</span></span>
           </a>
           <a href="https://apps.apple.com/us/app/%E4%BB%8A%E6%97%A5%E3%81%AF%E4%BD%95%E3%81%AE%E6%97%A5/id654436925?uo=4">
             <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/65/59/74/655974d4-9adf-57d4-0735-ce9f9a052103/HistoryTodayJP-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
@@ -373,7 +344,7 @@
             <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/47/f2/3a/47f23a7b-23a8-9106-e14e-05c39e141932/Icon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
             <div class="app-body">
               <p class="meta">Reference · $0.99 · Updated May 31, 2026</p>
-              <h3>World Maps — Offline Atlas</h3>
+              <h3><span class="fit-title">World Maps<span class="title-tail"> — Offline Atlas</span></span></h3>
               <p>You open a maps app and get buried in menus, ads, and paywalls. World Maps is the opposite.</p>
               <dl class="app-details">
                 <dt>Version</dt><dd>2605.31</dd>
@@ -383,11 +354,25 @@
             </div>
           </article>
 
+          <article class="app-card">
+            <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/70/58/7c/70587cc2-5eea-4bdd-bdaf-8fbdab84bebe/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
+            <div class="app-body">
+              <p class="meta">Reference · Free · Updated Jun 24, 2026</p>
+              <h3 lang="zh-Hans"><span class="fit-title">英汉・万词王<span class="title-tail">：五百万词条的离线英汉词典</span></span></h3>
+              <p>Looking up a word should not depend on signal, loading, or a browser tab. 英汉・万词王 keeps English-Chinese lookup, pronunciation, word forms, frequency, and review on your device, with 5M entries available offline.</p>
+              <dl class="app-details">
+                <dt>Version</dt><dd>2606.24</dd>
+                <dt>Requires</dt><dd>iOS 18.0+</dd>
+              </dl>
+              <a class="store-link" href="https://apps.apple.com/us/app/%E8%8B%B1%E6%B1%89-%E4%B8%87%E8%AF%8D%E7%8E%8B-%E4%BA%94%E7%99%BE%E4%B8%87%E8%AF%8D%E6%9D%A1%E7%9A%84%E7%A6%BB%E7%BA%BF%E8%8B%B1%E6%B1%89%E8%AF%8D%E5%85%B8/id469623568?uo=4">View on App Store</a>
+            </div>
+          </article>
+
           <article class="app-card feature-app">
             <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/01/c0/fe/01c0fe47-cd76-f80f-66b9-a24963baae63/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
             <div class="app-body">
               <p class="meta">Reference · Free · Updated Jun 19, 2026</p>
-              <h3>HSK Vocabulary: 汉语水平考试词汇表</h3>
+              <h3><span class="fit-title">HSK Vocabulary<span class="title-tail">: 汉语水平考试词汇表</span></span></h3>
               <p>HSK 3.0 is too big for random word lists. HSK Vocabulary gives you the full 11,000+ word path for HSK 1-9, with pinyin, native audio, real examples, stroke order, quizzes, and SRS review in one focused app. Search any word by Hanzi, pinyin, or English, then bookmark it, add a note, and bring it back in review before class, on the commute, or in the weeks before your exam. Trusted since 2013 by Chinese learners and tutors worldwide. Download free. Upgrade levels when you're ready.</p>
               <dl class="app-details">
                 <dt>Version</dt><dd>26.6.19</dd>
@@ -401,7 +386,7 @@
             <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/d0/9d/71/d09d7115-3b8e-eb92-d457-7f3d84ce8224/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
             <div class="app-body">
               <p class="meta">Reference · Free · Updated Jun 19, 2026</p>
-              <h3>JLPT Vocabulary:日本語能力試験出題基準語彙表</h3>
+              <h3><span class="fit-title">JLPT Vocabulary<span class="title-tail">:日本語能力試験出題基準語彙表</span></span></h3>
               <p>JLPT vocabulary gets hard when kanji, readings, examples, and review live in different places. JLPT Vocabulary keeps N5-N1 study in one focused app, with 7,700+ words, furigana, romaji, audio, examples, stroke order, quizzes, and SRS review. Search by kana, kanji, or English, then bookmark tough words, add notes, and bring them back in review before class, on the commute, or in the weeks before your exam. Trusted since 2013 by Japanese learners and teachers worldwide. Download free. Upgrade levels when you're ready.</p>
               <dl class="app-details">
                 <dt>Version</dt><dd>26.6.19</dd>
@@ -415,7 +400,7 @@
             <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/97/4a/5c/974a5c35-b3b8-f2d2-71a1-b8447aafaa92/pinyinizer-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
             <div class="app-body">
               <p class="meta">Education · $2.99 · Updated May 20, 2026</p>
-              <h3>Pinyinizer — Pinyin Converter</h3>
+              <h3><span class="fit-title">Pinyinizer<span class="title-tail"> — Pinyin Converter</span></span></h3>
               <p>Turn any Chinese text into a clean pinyin reader.</p>
               <dl class="app-details">
                 <dt>Version</dt><dd>26.5.21</dd>
@@ -471,7 +456,7 @@
             <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1c/58/0d/1c580df2-ac3b-fa4e-1880-e0575e2d65c0/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
             <div class="app-body">
               <p class="meta">Utilities · Free · Updated Jun 23, 2026</p>
-              <h3 lang="zh-Hans">来电清清：电话号码归属地查询与来电拦截</h3>
+              <h3 lang="zh-Hans"><span class="fit-title">来电清清<span class="title-tail">：电话号码归属地查询与来电拦截</span></span></h3>
               <p>陌生号码来电、短信里的号码或一串客户电话，最麻烦的是不知道来自哪里。 《来电清清》帮你快速查询号码归属地、运营商和常见服务号码信息。 粘贴整段文本也能批量提取号码，一次整理最多 30 个查询结果。 内置约 37.8 万条本地号码段记录，查号更直接。 本版继续优化 iPhone 与 iPad 布局，让查号、复制和本地拦截管理更稳定。</p>
               <dl class="app-details">
                 <dt>Version</dt><dd>2606.23</dd>
@@ -482,13 +467,13 @@
           </article>
 
           <article class="app-card">
-            <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/02/f1/87/02f18783-8702-b65c-799e-c2251cacf5be/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
+            <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1f/4a/5f/1f4a5f3b-d26e-dbc1-dc9f-c9884025b7df/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg" alt="">
             <div class="app-body">
-              <p class="meta">Travel · Free · Updated Jun 22, 2026</p>
-              <h3>1Tap Flashlight — Quick Torch</h3>
+              <p class="meta">Travel · Free · Updated Jun 25, 2026</p>
+              <h3><span class="fit-title">1Tap Flashlight<span class="title-tail"> — Quick Torch</span></span></h3>
               <p>When you need light in a hurry, the built-in flashlight can feel a little too buried. 1Tap Flashlight — Quick Torch keeps the torch, SOS, strobe, screen light, and auto-off timer in one simple place. Open it, tap once, and see exactly what is on without hunting through menus. It is made for small everyday problems and the occasional moment when you really do need a better light. Download 1Tap Flashlight — Quick Torch, and spend less time fiddling when you need to see.</p>
               <dl class="app-details">
-                <dt>Version</dt><dd>2606.22</dd>
+                <dt>Version</dt><dd>2606.23</dd>
                 <dt>Requires</dt><dd>iOS 15.0+</dd>
               </dl>
               <a class="store-link" href="https://apps.apple.com/us/app/1tap-flashlight-quick-torch/id405950389?uo=4">View on App Store</a>
@@ -500,10 +485,9 @@
     </main>
 
     <footer class="site-footer">
-      <div class="footer-illustration" aria-hidden="true"></div>
       <div class="footer-row">
         <div>
-          <p>© Susuapps <span class="since-2010 footer-since">since 2010</span></p>
+          <p>© Susuapps since 2010</p>
           <p class="footer-note">Quiet tools for iPhone, iPad, and Mac.</p>
         </div>
         <nav aria-label="Footer navigation">
