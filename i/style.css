@@ -20133,3 +20133,362 @@ html[data-theme="dark"] body.privacy-site-page .privacy-contact {
         display: none;
     }
 }
+
+/* Dark-mode toggle and final theme pass. */
+.theme-toggle {
+    position: absolute;
+    top: clamp(32px, 4vw, 58px);
+    right: clamp(24px, 4.4vw, 70px);
+    z-index: 5;
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 999px;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    cursor: pointer;
+    transition:
+        background-color 160ms ease,
+        border-color 160ms ease,
+        color 160ms ease,
+        transform 160ms ease;
+}
+
+.theme-toggle::after {
+    content: "";
+    position: absolute;
+    inset: -2px;
+}
+
+.theme-toggle:hover {
+    border-color: rgba(255, 255, 255, 0.42);
+    background: rgba(255, 255, 255, 0.28);
+}
+
+.theme-toggle:active {
+    transform: scale(0.97);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.92);
+    outline-offset: 3px;
+}
+
+.theme-toggle-icon {
+    grid-area: 1 / 1;
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition:
+        opacity 160ms ease,
+        transform 160ms ease;
+}
+
+.theme-toggle-icon-sun {
+    opacity: 0;
+    transform: rotate(-36deg) scale(0.72);
+}
+
+html[data-theme="dark"] .theme-toggle-icon-moon {
+    opacity: 0;
+    transform: rotate(36deg) scale(0.72);
+}
+
+html[data-theme="dark"] .theme-toggle-icon-sun {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+@media (min-width: 901px) {
+    body.home-page .hero-discovery {
+        right: clamp(86px, calc(4.4vw + 62px), 140px);
+    }
+}
+
+html[data-theme="dark"] body.home-page {
+    --behance-blue: #8bd0ff;
+    --behance-ink: #f4f8ff;
+    --behance-paper: #06101f;
+    --behance-line: rgba(139, 208, 255, 0.14);
+    --behance-soft: rgba(139, 208, 255, 0.08);
+    --behance-muted: #b3c4d6;
+    --behance-card: #0d1d31;
+    --blueprint-blue: #0754a2;
+    --blueprint-blue-deep: #061a33;
+    --blueprint-line: rgba(139, 208, 255, 0.13);
+    --blueprint-line-strong: rgba(139, 208, 255, 0.24);
+    --blueprint-ink: #f4f8ff;
+    --blueprint-soft: rgba(224, 242, 255, 0.76);
+    --blueprint-faint: rgba(224, 242, 255, 0.48);
+    --surface: #0d1d31;
+    --panel: #0d1d31;
+    --text: #f4f8ff;
+    --muted: #b3c4d6;
+    --accent: #8bd0ff;
+    --accent-strong: #b9e4ff;
+    --accent-soft: rgba(139, 208, 255, 0.12);
+    --shadow-ring: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    --shadow-ring-hover: inset 0 0 0 1px rgba(139, 208, 255, 0.24);
+    background: #06101f;
+    color: var(--text);
+}
+
+html[data-theme="dark"] body.home-page .home-canvas,
+html[data-theme="dark"] body.home-page .page-shell {
+    background: #06101f;
+}
+
+html[data-theme="dark"] body.home-page .hero {
+    background: linear-gradient(
+        180deg,
+        #0874bf 0%,
+        #0754a2 38%,
+        #062b63 68%,
+        #061a33 100%
+    );
+    color: var(--blueprint-ink);
+}
+
+html[data-theme="dark"] body.home-page .hero::before {
+    background:
+        linear-gradient(var(--blueprint-line) 1px, transparent 1px) 0 0 / 22%
+            30%,
+        linear-gradient(90deg, var(--blueprint-line) 1px, transparent 1px) 0 0 /
+            22% 30%,
+        radial-gradient(
+            circle at 50% 52%,
+            transparent 0 15%,
+            var(--blueprint-line-strong) 15.1% 15.28%,
+            transparent 15.38% 29%,
+            var(--blueprint-line) 29.1% 29.26%,
+            transparent 29.36% 43%,
+            var(--blueprint-line) 43.1% 43.28%,
+            transparent 43.38%
+        ),
+        linear-gradient(
+            45deg,
+            transparent 0 49.92%,
+            rgba(255, 255, 255, 0.08) 50%,
+            transparent 50.08%
+        ),
+        linear-gradient(
+            -45deg,
+            transparent 0 49.92%,
+            rgba(255, 255, 255, 0.07) 50%,
+            transparent 50.08%
+        );
+}
+
+html[data-theme="dark"] body.home-page .hero-brand-lockup,
+html[data-theme="dark"] body.home-page .hero-brand-lockup:hover,
+html[data-theme="dark"] body.home-page #hero-title,
+html[data-theme="dark"] body.home-page .hero h1,
+html[data-theme="dark"] body.home-page .hero-title-wide,
+html[data-theme="dark"] body.home-page .hero-title-rest,
+html[data-theme="dark"] body.home-page .hero-title-rest em {
+    color: var(--text);
+    text-shadow: none;
+}
+
+html[data-theme="dark"] body.home-page .hero-title-rest em {
+    border-color: rgba(244, 242, 238, 0.58);
+}
+
+html[data-theme="dark"] body.home-page .hero-text,
+html[data-theme="dark"] body.home-page .hero-proof {
+    color: var(--blueprint-soft);
+}
+
+html[data-theme="dark"] body.home-page .hero-proof dt {
+    color: var(--text);
+}
+
+html[data-theme="dark"] body.home-page .hero-proof dd,
+html[data-theme="dark"] body.home-page .hero-categories a {
+    color: rgba(244, 242, 238, 0.58);
+}
+
+html[data-theme="dark"] body.home-page .hero-categories a:first-child {
+    color: var(--text);
+}
+
+html[data-theme="dark"] body.home-page .hero-brand-mark {
+    background: var(--text);
+}
+
+html[data-theme="dark"] body.home-page .hero-cover img {
+    filter: none;
+}
+
+html[data-theme="dark"] body.home-page .hero-proof div + div,
+html[data-theme="dark"] body.home-page .hero-actions,
+html[data-theme="dark"] body.home-page .hero-categories,
+html[data-theme="dark"] body.home-page .theme-toggle {
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+html[data-theme="dark"] body.home-page .hero-actions,
+html[data-theme="dark"] body.home-page .theme-toggle {
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: none;
+}
+
+html[data-theme="dark"] body.home-page .hero-actions .button-primary {
+    background: var(--text);
+    color: #061a33;
+}
+
+html[data-theme="dark"] body.home-page .hero-actions .button-secondary {
+    background: transparent;
+    color: rgba(244, 242, 238, 0.78);
+}
+
+html[data-theme="dark"] body.home-page .coming-soon,
+html[data-theme="dark"] body.home-page .history-suite,
+html[data-theme="dark"] body.home-page .section,
+html[data-theme="dark"] body.home-page .stats {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: transparent;
+    box-shadow: none;
+}
+
+html[data-theme="dark"] body.home-page .deskimia-copy h2,
+html[data-theme="dark"] body.home-page .suite-copy h2,
+html[data-theme="dark"] body.home-page .section-heading.compact h2,
+html[data-theme="dark"] body.home-page .app-body h3,
+html[data-theme="dark"] body.home-page .suite-lead-title,
+html[data-theme="dark"] body.home-page .suite-feature-grid strong,
+html[data-theme="dark"] body.home-page .history-editions span {
+    color: var(--text);
+}
+
+html[data-theme="dark"] body.home-page .deskimia-description,
+html[data-theme="dark"] body.home-page .suite-copy > p,
+html[data-theme="dark"] body.home-page .section-heading p,
+html[data-theme="dark"] body.home-page .app-body p:not(.meta),
+html[data-theme="dark"] body.home-page .suite-lead-description,
+html[data-theme="dark"] body.home-page .meta,
+html[data-theme="dark"] body.home-page .app-details,
+html[data-theme="dark"] body.home-page .stats dt,
+html[data-theme="dark"] body.home-page .footer-note {
+    color: var(--muted);
+}
+
+html[data-theme="dark"] body.home-page .suite-lead,
+html[data-theme="dark"] body.home-page .suite-feature-grid div,
+html[data-theme="dark"] body.home-page .suite-icon-row,
+html[data-theme="dark"] body.home-page .history-editions a,
+html[data-theme="dark"] body.home-page #apps .app-card,
+html[data-theme="dark"] body.home-page .deskimia-preview {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: #0d1d31;
+    box-shadow: none;
+}
+
+html[data-theme="dark"] body.home-page .deskimia-tags span {
+    border-color: rgba(139, 208, 255, 0.2);
+    background: rgba(139, 208, 255, 0.12);
+    color: var(--accent-strong);
+}
+
+html[data-theme="dark"] body.home-page .button-secondary,
+html[data-theme="dark"] body.home-page .deskimia-actions .button-secondary {
+    border-color: rgba(255, 255, 255, 0.14);
+    background: transparent;
+    color: var(--text);
+}
+
+html[data-theme="dark"] body.home-page .store-link,
+html[data-theme="dark"] body.home-page .deskimia-social-tip a {
+    color: var(--accent-strong);
+}
+
+html[data-theme="dark"] body.home-page .site-footer {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: #06101f;
+}
+
+html[data-theme="dark"] body.home-page .site-footer,
+html[data-theme="dark"] body.home-page .site-footer a {
+    color: var(--text);
+}
+
+html[data-theme="dark"] body.privacy-site-page .theme-toggle {
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text);
+}
+
+html[data-theme="dark"] body.privacy-site-page,
+html[data-theme="dark"] body.privacy-site-page .privacy-canvas {
+    background: #06101f;
+}
+
+html[data-theme="dark"] body.privacy-site-page .privacy-hero {
+    background: linear-gradient(
+        180deg,
+        #0874bf 0%,
+        #0754a2 38%,
+        #062b63 68%,
+        #061a33 100%
+    );
+}
+
+html[data-theme="dark"] body.privacy-site-page .privacy-hero::before {
+    background:
+        linear-gradient(rgba(139, 208, 255, 0.13) 1px, transparent 1px) 0 0 /
+            22% 30%,
+        linear-gradient(90deg, rgba(139, 208, 255, 0.13) 1px, transparent 1px)
+            0 0 / 22% 30%,
+        radial-gradient(
+            circle at 50% 52%,
+            transparent 0 18%,
+            rgba(139, 208, 255, 0.24) 18.1% 18.22%,
+            transparent 18.32% 34%,
+            rgba(139, 208, 255, 0.13) 34.1% 34.22%,
+            transparent 34.32%
+        );
+}
+
+html[data-theme="dark"] body.privacy-site-page .privacy-actions .button-primary {
+    color: #061a33;
+}
+
+@media (max-width: 1599px) {
+    html[data-theme="dark"] body.home-page .hero-cover-jlpt,
+    html[data-theme="dark"] body.home-page .hero-cover-pinyin-table,
+    html[data-theme="dark"] body.home-page .hero-cover-radical,
+    html[data-theme="dark"] body.home-page .hero-cover-rocket,
+    html[data-theme="dark"] body.home-page .hero-cover-phone,
+    html[data-theme="dark"] body.home-page .hero-cover-flashlight {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .theme-toggle {
+        top: 18px;
+        right: 18px;
+    }
+}
+
+@media (max-width: 760px) {
+    .theme-toggle {
+        top: 14px;
+        right: 14px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .theme-toggle-icon {
+        width: 19px;
+        height: 19px;
+    }
+}

@@ -49,7 +49,7 @@
       })();
     </script>
     <link rel="preload" href="../i/fonts/HankenGrotesk-wght.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../i/style.css?v=20260628-privacy-sync">
+    <link rel="stylesheet" href="../i/style.css?v=20260628-dark-toggle">
     <link rel="icon" type="image/x-icon" href="../favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="../i/susuapps-favicon-32.png" media="(prefers-color-scheme: light)">
     <link rel="icon" type="image/png" sizes="32x32" href="../i/susuapps-favicon-32-dark.png" media="(prefers-color-scheme: dark)">
@@ -126,6 +126,30 @@
 
       <main class="page-shell privacy-page">
         <section class="privacy-hero" aria-labelledby="privacy-title">
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="切换到深色模式"
+            title="切换到深色模式"
+            data-theme-toggle
+            data-theme-label-dark="切换到深色模式"
+            data-theme-label-light="切换到浅色模式"
+          >
+            <svg class="theme-toggle-icon theme-toggle-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18.5 14.36A7.15 7.15 0 0 1 9.64 5.5a7.65 7.65 0 1 0 8.86 8.86Z"/>
+            </svg>
+            <svg class="theme-toggle-icon theme-toggle-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 8.25a3.75 3.75 0 1 1 0 7.5 3.75 3.75 0 0 1 0-7.5Z"/>
+              <path d="M12 2.75v2.1"/>
+              <path d="M12 19.15v2.1"/>
+              <path d="m4.06 4.06 1.49 1.49"/>
+              <path d="m18.45 18.45 1.49 1.49"/>
+              <path d="M2.75 12h2.1"/>
+              <path d="M19.15 12h2.1"/>
+              <path d="m4.06 19.94 1.49-1.49"/>
+              <path d="m18.45 5.55 1.49-1.49"/>
+            </svg>
+          </button>
           <a class="privacy-brand-lockup" href="../index.html" aria-label="返回首页">
             <span class="privacy-brand-mark" aria-hidden="true">
               <img src="../i/susuapps-logo-mark.svg" alt="">
@@ -276,6 +300,7 @@
       (() => {
         const root = document.documentElement;
         const controls = Array.from(document.querySelectorAll("[data-theme-choice]"));
+        const toggles = Array.from(document.querySelectorAll("[data-theme-toggle]"));
         const themeColor = document.querySelector("[data-theme-color]");
         const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
         const validPreferences = new Set(["system", "dark", "light"]);
@@ -313,11 +338,20 @@
           root.style.colorScheme = nextTheme;
 
           if (themeColor) {
-            themeColor.setAttribute("content", nextTheme === "dark" ? "#05070a" : "#05aef4");
+            themeColor.setAttribute("content", nextTheme === "dark" ? "#061a33" : "#05aef4");
           }
 
           controls.forEach((control) => {
             control.setAttribute("aria-pressed", String(control.dataset.themeChoice === nextPreference));
+          });
+
+          toggles.forEach((toggle) => {
+            const label = nextTheme === "dark"
+              ? (toggle.dataset.themeLabelLight || "切换到浅色模式")
+              : (toggle.dataset.themeLabelDark || "切换到深色模式");
+            toggle.setAttribute("aria-label", label);
+            toggle.setAttribute("aria-pressed", String(nextTheme === "dark"));
+            toggle.title = label;
           });
 
           if (persist) {
@@ -330,6 +364,12 @@
         controls.forEach((control) => {
           control.addEventListener("click", () => {
             applyTheme(control.dataset.themeChoice, true);
+          });
+        });
+
+        toggles.forEach((toggle) => {
+          toggle.addEventListener("click", () => {
+            applyTheme(root.dataset.theme === "dark" ? "light" : "dark", true);
           });
         });
 
